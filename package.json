@@ -30,4 +30,8 @@
   },
   "homepage": "https://github.com/N/A#readme",
   "main": "server.js"
+
+  "engines": {
+    "node": "4.9.1"
+  },
 }
