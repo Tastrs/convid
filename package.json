@@ -8,17 +8,26 @@
   "keywords": [
     "WebRTC"
   ],
-  "author": "Michael Wanyoike",
+  "author": "Lucas Helme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:brandiqa/simplewebrtc-messenger.git"
+    "url": "git+https://github.com/N/A.git"
   },
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "handlebars": "^4.1.0",
     "jquery": "^3.3.1",
-    "semantic-ui-css": "^2.3.1",
-    "simplewebrtc": "^3.0.2"
-  }
+    "semantic-ui-css": "^2.4.1",
+    "simplewebrtc": "^3.0.2",
+    "webrtc-adapter": "^4.0.0"
+  },
+  "devDependencies": {
+    "install-peers": "^1.0.3"
+  },
+  "bugs": {
+    "url": "https://github.com/N/A/issues"
+  },
+  "homepage": "https://github.com/N/A#readme",
+  "main": "server.js"
 }
