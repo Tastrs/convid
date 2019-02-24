@@ -1,5 +1,5 @@
 {
-  "name": "simplewebrtc-messenger",
+  "name": "convid",
   "version": "1.0.0",
   "description": "Simple WebRTC Messenger",
   "scripts": {
@@ -30,8 +30,4 @@
   },
   "homepage": "https://github.com/N/A#readme",
   "main": "server.js"
-
-  "engines": {
-    "node": "4.9.1"
-  },
 }

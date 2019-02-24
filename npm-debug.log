@@ -7,9 +7,9 @@
 4 verbose readDependencies loading dependencies from C:\Users\Lucas\convid\package.json
 5 error install Couldn't read dependencies
 6 verbose stack Error: Failed to parse json
-6 verbose stack Unexpected token 'e' at 34:4
-6 verbose stack   "engines": {
-6 verbose stack    ^
+6 verbose stack Trailing comma in object at 34:1
+6 verbose stack }
+6 verbose stack ^
 6 verbose stack     at parseError (C:\Users\Lucas\AppData\Roaming\nvm\v4.9.1\node_modules\npm\node_modules\read-package-json\read-json.js:390:11)
 6 verbose stack     at parseJson (C:\Users\Lucas\AppData\Roaming\nvm\v4.9.1\node_modules\npm\node_modules\read-package-json\read-json.js:79:23)
 6 verbose stack     at C:\Users\Lucas\AppData\Roaming\nvm\v4.9.1\node_modules\npm\node_modules\read-package-json\read-json.js:48:5
@@ -23,9 +23,9 @@
 12 error file C:\Users\Lucas\convid\package.json
 13 error code EJSONPARSE
 14 error Failed to parse json
-14 error Unexpected token 'e' at 34:4
-14 error   "engines": {
-14 error    ^
+14 error Trailing comma in object at 34:1
+14 error }
+14 error ^
 15 error File: C:\Users\Lucas\convid\package.json
 16 error Failed to parse package.json data.
 16 error package.json must be actual JSON, not just JavaScript.
