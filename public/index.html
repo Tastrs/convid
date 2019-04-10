@@ -5,38 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="scripts/semantic-ui-css/semantic.min.css">
-  <title>SimpleWebRTC Demo</title>
+  <title>ConVid</title>
   <style>
-    html { margin-top: 20px; }
+    html { margin-top: 35px; }
     #chat-content { height: 180px;  overflow-y: scroll; }
   </style>
+  <link rel="icon" href="https://cdn.glitch.com/2d5d1720-9f50-4922-a0cd-7578d3a60697%2Flogofav.ico?1554222936102">
 </head>
-<body>
+<body id='body'>
 
   <div class="ui container">
-    <h1 class="ui header">Simple WebRTC Messenger</h1>
+    <a href="http://convid.tk" style="color: #000000; text-decoration: none;"><h1>ConVid</h1></a>
+         
+          <button onclick="window.location.href = 'https://convid.glitch.me';" class="ui icon button">  
+  <i class="angle left icon"></i>  
+</button><button onclick="changeColor();" class="ui icon button"> 
+  <i class="paint brush icon"></i>  
+</button>
+         
     <hr>
     <div class="ui two column stackable grid">
       <div class="ui ten wide column">
         <div class="ui segment">
 
-          <!-- Chat Room Form -->
+          
+          <script>
+    var colors = ["pink","yellow","green","orange","cyan","purple","red","white"];
+    var colorIndex = 0;
+    function changeColor() {
+        var col = document.getElementById("body");
+        if( colorIndex >= colors.length ) {
+            colorIndex = 0;
+        }
+        col.style.backgroundColor = colors[colorIndex];
+        colorIndex++;
+    }
+</script>
+          
+
+                  
+          <!--Chat Room -->
           <div class="ui form">
             <div class="fields">
               <div class="field">
-                <label>User Name</label>
-                <input type="text" placeholder="Enter user name" id="username" name="username">
+                <label>Username</label>
+                <input type="text" placeholder="Enter a Username" id="username" name="username">
               </div>
               <div class="field">
                 <label>Room</label>
-                <input type="text" placeholder="Enter room name" id="roomName" name="roomName">
+                <input type="text" placeholder="Enter a Room Name" id="roomName" name="roomName">
               </div>
             </div>
             <br>
             <div class="ui buttons">
-              <div id="create-btn" class="ui submit orange button">Create Room</div>
+              <div id="create-btn" class="ui submit blue button">Create Room</div>
               <div class="or"></div>
-              <div id="join-btn" class="ui submit green button">Join Room</div>
+              <div id="join-btn" class="ui submit blue button">Join Room</div>
             </div>
           </div>
 
@@ -45,9 +69,9 @@
         </div>
       </div>
 
-      <!-- Local Camera -->
+      <!-- Base Camera -->
       <div class="ui six wide column">
-        <img  id="local-image" class="ui large image" src="images/image.png">
+        <img  id="local-image" class="ui large image" src="https://cdn.glitch.com/2d5d1720-9f50-4922-a0cd-7578d3a60697%2Fimage.png?1552920078081">
         <video id="local-video" class="ui large image"  autoplay></video>
         <h4 class="ui center aligned header" style="margin:0;">
           Local Camera
@@ -55,20 +79,20 @@
       </div>
     </div>
 
-    <!-- Remote Cameras -->
-    <h3 class="ui center aligned header">Remote Cameras</h3>
+    <!-- Other People -->
+    <h3 class="ui center aligned header">Other People</h3>
     <div id="remote-videos" class="ui stackable grid">
       <div class="four wide column">
-        <img class="ui centered medium image" src="images/image.png">
+        <img class="ui centered medium image" src="">
       </div>
       <div class="four wide column">
-        <img class="ui centered medium image" src="images/image.png">
+        <img class="ui centered medium image" src="">
       </div>
       <div class="four wide column">
-        <img class="ui centered medium image" src="images/image.png">
+        <img class="ui centered medium image" src="">
       </div>
       <div class="four wide column">
-        <img class="ui centered medium image" src="images/image.png">
+        <img class="ui centered medium image" src="">
       </div>
     </div>
   </div>
@@ -77,23 +101,21 @@
   <!-- Remote Video Template -->
   <script id="remote-video-template" type="text/x-handlebars-template">
     <div id="{{ id }}" class="four wide column">
-      <img class="ui centered medium image" src="images/image.png">
+      <img class="ui centered medium image" src=">
     </div>
   </script>
 
   <!-- Chat Content Template -->
+  
   <script id="chat-content-template" type="text/x-handlebars-template">
    {{#each messages}}
     <div class="event">
       <div class="label">
-        <i class="icon blue user"></i>
+        <i class="user circle icon black"></i>
       </div>
       <div class="content">
         <div class="summary">
-          <a href="#"> {{ username }}</a> posted on
-          <div class="date">
-            {{ postedOn }}
-          </div>
+          <a href="#"> {{ username }}</a> Said
         </div>
         <div class="extra text">
           {{ message }}
@@ -102,22 +124,20 @@
     </div>
   {{/each}}
   </script>
-
+  
   <!-- Chat Template -->
   <script id="chat-template" type="text/x-handlebars-template">
-    <h3 class="ui orange header">Room ID -> <strong>{{ room }}</strong></h3>
+    <h3 class="ui blue header">Room Name: <strong>{{ room }}</strong></h3>
     <hr>
     <div id="chat-content" class="ui feed"> </div>
     <hr>
     <div class="ui form">
       <div class="ui field">
-        <label>Post Message</label>
         <textarea id="post-message" name="post-message" rows="1"></textarea>
       </div>
       <div id="post-btn" class="ui primary submit button">Send</div>
     </div>
   </script>
-
   <!-- Scripts -->
   <script src="scripts/jquery/dist/jquery.min.js"></script>
   <script src="scripts/semantic-ui-css/semantic.min.js"></script>

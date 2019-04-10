@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 
   // Local Video
   const localImageEl = $('#local-image');
-  const localVideoEl = $('#local-video');
+  const localVideoEl = $('#laocal-video');
 
   // Remote Videos
   const remoteVideoTemplate = Handlebars.compile($('#remote-video-template').html());

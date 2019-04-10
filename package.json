@@ -1,7 +1,7 @@
 {
   "name": "convid",
   "version": "1.0.0",
-  "description": "Simple WebRTC Messenger",
+  "description": "Invention Convention",
   "scripts": {
     "start": "node server.js"
   },
@@ -19,6 +19,7 @@
     "handlebars": "^4.1.0",
     "jquery": "^3.3.1",
     "semantic-ui-css": "^2.4.1",
+    "semantic-ui-dropdown": "^2.4.1",
     "simplewebrtc": "^3.0.2",
     "webrtc-adapter": "^4.0.0"
   },
